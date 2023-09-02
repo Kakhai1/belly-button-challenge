@@ -52,7 +52,7 @@ d3.json(jsonURL).then(function(data) {
         };
 
         Plotly.newPlot("bar", barData, barLayout);
-
+        // Create Bubble chart for each sample
         const bubbleTrace = {
             x: top10_otu_ids,
             y: top10_sample_values,
@@ -76,6 +76,7 @@ d3.json(jsonURL).then(function(data) {
     
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
+        //Obtain metadata and display in metadata container.
         metadatacontainer.html("");        
         const metadata = data.metadata[sampleIndex];
         for (const key in metadata) {
